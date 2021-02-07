@@ -2,9 +2,11 @@
 #pyttsx3 package
 #pyaudio package
 #pywhatkit module
+#datetime package
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
+import datetime
 
 listner = sr.Recognizer()
 engine = pyttsx3.init()
@@ -38,5 +40,10 @@ def run_alexa():
         song = command.replace('play','')
         talk('playing' + song)
         pywhatkit.playonyt(song)#opens the youtube in your device
+    elif 'time' in command:#-time command here
+        time=datetime.datetime.now().strftime('%I:%M %p')
+        print(time)
+        talk('Current time is '+time)
+
 
 run_alexa()
