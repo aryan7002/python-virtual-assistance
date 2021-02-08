@@ -2,11 +2,13 @@
 #pyttsx3 package
 #pyaudio package
 #pywhatkit module
-#datetime package
+#datetime package (inbuilt)
+#wikipedia module
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
 import datetime
+import wikipedia
 
 listner = sr.Recognizer()
 engine = pyttsx3.init()
@@ -44,6 +46,11 @@ def run_alexa():
         time=datetime.datetime.now().strftime('%I:%M %p')
         print(time)
         talk('Current time is '+time)
+    elif'who is''what is''why''tell me about' in command:
+        wiki= command.replace(['who is','what is','why','tell me about'],'')
+        info =wikipedia.summary(wiki,2)#returns only 2 line from wikipedia
+        print(info)
+        talk(info)
 
 
 run_alexa()
