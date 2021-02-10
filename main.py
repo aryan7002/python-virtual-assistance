@@ -46,11 +46,10 @@ def run_alexa():
         time=datetime.datetime.now().strftime('%I:%M %p')
         print(time)
         talk('Current time is '+time)
-    elif'who is''what is''why''tell me about' in command:
-        wiki= command.replace(['who is','what is','why','tell me about'],'')
+    elif'who is' in command:
+        wiki= command.replace('who is','')
         info =wikipedia.summary(wiki,2)#returns only 2 line from wikipedia
         print(info)
         talk(info)
-
 
 run_alexa()
