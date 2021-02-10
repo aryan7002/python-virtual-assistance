@@ -9,7 +9,7 @@
 
 ## you can do following thins by speaking:
 
-* play song on youtube (paly your_Song_Name)
+* play song on youtube (play your_Song_Name)
 * you can ask time (whats time now)
 * you can serch for peson on wikipedia(who is justin beeber)
 
